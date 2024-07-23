@@ -1,12 +1,12 @@
 (cl:comment '
-The most current version of this file will always be available at https://buffalo.box.com/v/FOIS2024-support
-Last updated: 02/14/2024
+The most current version of this file will always be available at https://github.com/michaelrabenberg/FOIS-2024-Rabenberg-Ceusters-Paper/tree/main
+Last updated: 07/22/2024
 Authors: Michael Rabenberg - rabenbergm@gmail.com, Werner Ceusters - wceusters@gmail.com
 This work is licensed under a Creative Commons "Attribution 4.0 International" license: https://creativecommons.org/licenses/by/4.0/
 
-These are axioms concerned with fiat-surface and continuant fiat boundary that we believe worthy of consideration for inclusion in future versions of BFO, whether as such or as theorems of other added axioms.
+These are axioms concerned with fiat-surface and continuant fiat boundary that we believe worthy of consideration for inclusion in future versions of BFO, whether as such or as theorems of other added axioms, but that we believe inappropriate for boundary-yes.cl.
 All axioms are indexed bbb-maybe-something.
-In explanatory comments, read references to *logical strength*, and *entailment*, and so on as presupposing extant BFO axioms.
+In explanatory comments, read references to *logical strength*, *entailment*, and so on as presupposing extant BFO axioms.
 
 '
 
@@ -100,7 +100,7 @@ In explanatory comments, read references to *logical strength*, and *entailment*
 (cl:comment "4b is logically stronger than 4a.
             We think weakened variants of 4a and 4b containing a temporal-instant restriction in their ancedents are no better motivated than 4a and 4b, so we do not include such weakened variants.")
 
-(cl:comment "if something is a material entity at SOME time then a continuant fiat boundary is LOCATED IN it at THAT time [sss-maybe-4a]"
+(cl:comment "if something is a material entity at SOME time then a continuant fiat boundary is LOCATED IN it at THAT time [bbb-maybe-4a]"
    (forall (a t)
       (if   (instance-of a material-entity t)
                 (exists (b)
@@ -108,7 +108,7 @@ In explanatory comments, read references to *logical strength*, and *entailment*
                         (located-in b a t)))))
 )
 
-(cl:comment "if something is a material entity at SOME time then a continuant fiat boundary is CONTINUANT PART OF it at THAT time [sss-maybe-4b]"
+(cl:comment "if something is a material entity at SOME time then a continuant fiat boundary is CONTINUANT PART OF it at THAT time [bbb-maybe-4b]"
    (forall (a t)
       (if   (instance-of a material-entity t)
                 (exists (b)
@@ -257,7 +257,7 @@ In explanatory comments, read references to *logical strength*, and *entailment*
                   (hugs a b t))))
 )
 
-(cl:comment "every maximal fiat surface that hugs an entity at a given time hugs this entity alone at this time [sss-hugs-8d]"
+(cl:comment "every maximal fiat surface that hugs an entity at a given time hugs this entity alone at this time [bbb-hugs-8d]"
    (forall (a b t)
       (if  (and (instance-of a maximal-fiat-surface t)
                 (hugs a b t))
@@ -266,7 +266,7 @@ In explanatory comments, read references to *logical strength*, and *entailment*
                               (= c b)))))
 )
 
-(cl:comment "every entity that is hugged by a maximal fiat surface at a given time is hugged by exactly one maximal fiat surface at this time [sss-maybe-8e]"
+(cl:comment "every entity that is hugged by a maximal fiat surface at a given time is hugged by exactly one maximal fiat surface at this time [bbb-maybe-8e]"
    (forall (a b t)
       (if  (and   (instance-of a maximal-fiat-surface t)
                   (hugs a b t))
@@ -276,7 +276,7 @@ In explanatory comments, read references to *logical strength*, and *entailment*
                                           (= c a)))))
 )
 
-(cl:comment "if a maximal fiat surface ever hugs an object then this maximal fiat surface hugs this object as long as this object exists [sss-maybe-8f]"
+(cl:comment "if a maximal fiat surface ever hugs an object then this maximal fiat surface hugs this object as long as this object exists [bbb-maybe-8f]"
    (forall (a b)
       (if   (exists (t1)
               (and  (instance-of a maximal-fiat-surface t1)
@@ -287,7 +287,7 @@ In explanatory comments, read references to *logical strength*, and *entailment*
                                   (hugs a b t2)))))
 )
 
-(cl:comment "if a maximal fiat surface ever hugs an object then this maximal fiat surface never hugs anything else [sss-maybe-8g]"
+(cl:comment "if a maximal fiat surface ever hugs an object then this maximal fiat surface never hugs anything else [bbb-maybe-8g]"
    (forall (a b)
       (if   (exists (t1)
               (and  (instance-of a maximal-fiat-surface t1)

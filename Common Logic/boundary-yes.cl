@@ -1,6 +1,6 @@
 (cl:comment '
-The most current version of this file will always be available at https://buffalo.box.com/v/FOIS2024-support
-Last updated: 02/14/2024
+The most current version of this file will always be available at https://github.com/michaelrabenberg/FOIS-2024-Rabenberg-Ceusters-Paper/tree/main
+Last updated: 07/22/2024
 Authors: Michael Rabenberg - rabenbergm@gmail.com, Werner Ceusters - wceusters@gmail.com
 This work is licensed under a Creative Commons "Attribution 4.0 International" license: https://creativecommons.org/licenses/by/4.0/
 
@@ -20,6 +20,7 @@ All axioms are indexed bbb-yes-something.
 
 
 
+
 (cl:comment "if something is a continuant fiat boundary at SOME temporal instant then something is a material entity at THAT temporal instant [bbb-yes-1a]"
    (forall (a t)
       (if   (and  (instance-of a continuant-fiat-boundary t)
@@ -27,7 +28,7 @@ All axioms are indexed bbb-yes-something.
                      (exists (b)
                         (instance-of b material-entity t))))
 )
-    (cl:comment "NOTE: The temporal-instant restriction in the antecedent of [sss-inc-1a] could be removed if a continuant fiat boundary cannot outlast its 'underlying' material entity.")
+    (cl:comment "NOTE: The temporal-instant restriction in the antecedent of [bbb-yes-1a] could be removed if a continuant fiat boundary cannot outlast its 'underlying' material entity.")
 
   
 (cl:comment "if something is a material entity at SOME time then something is a continuant fiat boundary at THAT time [bbb-yes-2a]"
@@ -59,17 +60,18 @@ All axioms are indexed bbb-yes-something.
                (instance-of a material-entity t)))
 )
 
-(cl:comment "something is matter iff it is-matter-of something [bbb-yes-3c]"
+(cl:comment "something is matter at SOME temporal instant iff it is-matter-of something at THAT temporal instant [bbb-yes-3c]"
    (forall (a t)
-      (iff  (instance-of a matter t)
+      (iff  (and  (instance-of t temporal-instant t)
+                  (instance-of a matter t))
             (exists (b)
                (is-matter-of a b t))))
 )
 
-(cl:comment "is-matter-of has domain matter and range material entity [bbb-yes-3d]"
+(cl:comment "is-matter-of has domain material-entity and range material entity [bbb-yes-3d]"
    (forall (a b t)
       (if   (is-matter-of a b t)
-               (and  (instance-of a matter t)
+               (and  (instance-of a material-entity t)
                      (instance-of b material-entity t)
                      (instance-of t temporal-region t))))
 )
